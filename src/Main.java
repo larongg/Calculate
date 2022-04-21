@@ -36,7 +36,7 @@ public class Main {
             }
 
             if (rim_cif >= 40 && rim_cif < 50) {
-                rim_str += (char)8553 + (char)8556;
+                rim_str += Character.toString((char)8553) + Character.toString((char)8556);
                 if (rim_cif % 10 != 0) {rim_str += (char)(rim_cif % 10 + '0' + 8495);}
             }
 
@@ -46,7 +46,7 @@ public class Main {
                 if (rim_cif % 10 != 0) {rim_str += (char)(rim_cif % 10 + '0' + 8495);}
             }
             if (rim_cif >= 90 && rim_cif < 100) {
-                rim_str += (char)8553 + (char)8557;
+                rim_str += Character.toString((char)8553) + Character.toString((char)8557);
                 if (rim_cif % 10 != 0) {rim_str += (char)(rim_cif % 10 + '0' + 8495);}
             }
             if (rim_cif == 100) {rim_str += (char)8557;}
@@ -62,6 +62,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         System.out.println(calc(s));
@@ -78,7 +79,7 @@ public class Main {
                 s += i + " * " + j;
                 System.out.print(calc(s) + " ");
             }
-            System.out.println();
-        }*/
+            System.out.println();*/
+        }
     }
 }
