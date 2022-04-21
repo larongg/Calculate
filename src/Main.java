@@ -22,13 +22,13 @@ public class Main {
 
     public static String calc(String input) {
         String[] s = input.split(" ");
-        if (s.length > 3) {return "throws Exception";}
+        if (s.length != 3) {return "throws Exception";}
 // римские
         if (rim_true(s[0]) && rim_true(s[2])) {
             byte rim_cif = Byte.parseByte(calculation_arab(new String[]{Integer.toString((int)s[0].charAt(0)-8495-'0'), s[1], Integer.toString((int)s[2].charAt(0)-8495-'0')}));
-            if (rim_cif < 1) {return "throws Exception"};
+            if (rim_cif < 1) {return "throws Exception";}
             if (rim_cif > 10) {
-                return (Character.toString((char)8553) + (rim_cif-10))
+                return (Character.toString((char)8553) + ((char)(rim_cif-10+'0'+8495)));
             }
         }
 // арабские
@@ -43,6 +43,7 @@ public class Main {
         System.out.println(calc(s));
         //System.out.println(((int)'Ⅰ' - (int)'1'));
         //System.out.println(((char)((int)'Ⅴ'-8495))-'0');
+        //System.out.println((char)(5+2+'0'+8495));
     }
 }
 //Integer.toString((int)h.charAt(0)-8495-'0')
