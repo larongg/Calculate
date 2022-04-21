@@ -20,9 +20,18 @@ public class Main {
         return Byte.toString((byte)(Byte.parseByte(s[0]) / Byte.parseByte(s[2])));
     }
 
+    public static boolean arf_op(char op) {
+        char[] arf = {'+','-','*','/'};
+        for (char l:arf) {
+            if (l == op) {return true;}
+        }
+        return false;
+    }
     public static String calc(String input) {
         String[] s = input.split(" ");
         if (s.length != 3) {return "throws Exception";}
+        if (!arf_op(s[1].charAt(0))){return "throws Exception";}
+
 // римские
         if (rim_true(s[0]) && rim_true(s[2])) {
             String rim_str = "";
@@ -64,9 +73,10 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.nextLine();
-        System.out.println(calc(s));
-
+        //while (true) {
+            String s = scanner.nextLine();
+            System.out.println(calc(s));
+        //}
         //System.out.println(((int)'Ⅰ' - (int)'1'));
         //System.out.println(((char)((int)'Ⅴ'-8495))-'0');
         //System.out.println((char)(5+2+'0'+8495));
@@ -79,7 +89,7 @@ public class Main {
                 s += i + " * " + j;
                 System.out.print(calc(s) + " ");
             }
-            System.out.println();*/
-        }
+            System.out.println();
+        } */
     }
 }
